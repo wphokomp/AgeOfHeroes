@@ -1,0 +1,20 @@
+
+<div class="grid grid-pad" *ngIf="len > 0; else display_notice">
+  <h3>Heroes</h3>
+  <a *ngFor="let hero of heroes" class="col-1-4"
+      routerLink="/detail/{{hero._id}}">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<div class="_button">
+  <button (click)="createHero()" routerLink="/addHero">Create</button>
+</div>
+
+<ng-template #display_notice>
+
+  <h3> Trouble! No heroes in the neighborhood . </h3>
+
+</ng-template>
