@@ -17,9 +17,9 @@ export class HeroService {
   private heroesUrl = 'http://localhost:3000/heroes/';
   constructor(private http: HttpClient) { }
 
-  private log(message: string) { }
+  private log(_: string) { }
 
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(_ = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
